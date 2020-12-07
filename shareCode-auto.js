@@ -7,26 +7,26 @@
  */
 const $ = new Env("互助码");
 const shareCodes = [
-  {
+ {
     zd: $.getdata("zd_shareCode1") || "ryhcevi2jws3rwtwbxjb5mola5ac3f4ijdgqji",
     nc: $.getdata("nc_shareCode1") || "adf2700bf2367427b92f0819ff142ebb7",
     mc: $.getdata("mc_shareCode1") || "MTAxODcxOTI2NTAwMDAwMDAyNjQ0NzYzNQ==",
     ddgc: $.getdata("dd_shareCode1") || "P04z54XCjVWnYaS5mhPWmHx1H5Kk_eaug",
     jxgc: $.getdata("jx_shareCode1") || "XwKNPPNW5erTPUvfE7Um1A==",
   },
-   {
-    zd: $.getdata("zd_shareCode1") || "kryhcevi2jws3rwtwbxjb5mola5ac3f4ijdgqji",
-    nc: $.getdata("nc_shareCode1") || "df2700bf2367427b92f0819ff142ebb7",
-    mc: $.getdata("mc_shareCode1") || "MTAxODcxOTI2NTAwMDAwMDAyNjQ0NzYzNQ==",
-    gc: $.getdata("gc_shareCode1") || "P04z54XCjVWnYaS5mhPWmHx1H5Kk_eaug",
-    jx: $.getdata("jx_shareCode1") || "XwKNPPNW5erTPUvfE7Um1A==",
-  },
   {
     zd: $.getdata("zd_shareCode2") || "xaq3fso6ha2kqi34gekijjc3sklht2gwkpke22i",
     nc: $.getdata("nc_shareCode2") || "9fcf6efa712f40f1bcc8488479f7e352",
     mc: $.getdata("mc_shareCode2") || "MTE1NDAxNzgwMDAwMDAwMzY2ODc3MzE=",
-    gc: $.getdata("gc_shareCode1") || "P04z54XCjVWnYaS5mlXTjUsVfqfAU024HE",
-jx: $.getdata("jx_shareCode1") || "_Wun7qa7XpzdbHoB-tqNUw==",
+    ddgc: $.getdata("dd_shareCode2") || "P04z54XCjVWnYaS5mlXTjUsVfqfAU024HE",
+    jxgc: $.getdata("jx_shareCode2") || "_Wun7qa7XpzdbHoB-tqNUw==",
+  },
+{
+    zd: $.getdata("zd_shareCode2") || "mlrdw3aw26j3whjsgvfk6is5jpb2fokucj36l5a",
+    nc: $.getdata("nc_shareCode2") || "dcb1345777694b8ebb5fde99a1fff6a0",
+    mc: $.getdata("mc_shareCode2") || "MTE1NDQ5OTUwMDAwMDAwNDE3ODM3Mzc=",
+    ddgc: $.getdata("dd_shareCode2") || "P04z54XCjVWnYaS5m9cZ2WtiH9Mx7fu5Gw29QM",
+    jxgc: $.getdata("jx_shareCode2") || "craJAPt4-VEHXby1IpspgQ==",
   },
 ];
 $.result = [];
