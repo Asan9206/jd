@@ -37,7 +37,6 @@ jobs:
           npm install
       - name: '运行 【随机互助车】'
         run: |
-          cd ~/jd
           node shareCode-auto.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
