@@ -29,7 +29,7 @@ const shareCodes = [
     mc: $.getdata("mc_shareCode2") || "MTE1NDQ5OTUwMDAwMDAwNDE3ODM3Mzc=",
     ddgc: $.getdata("dd_shareCode2") || "P04z54XCjVWnYaS5m9cZ2WtiH9Mx7fu5Gw29QM",
     jxgc: $.getdata("jx_shareCode2") || "craJAPt4-VEHXby1IpspgQ==",
-    jdzz: $.getdata("zz_shareCode1") || "",
+    jdzz: $.getdata("zz_shareCode1") || "S5KkcRUtM9lKFI0_1laYLdQ",
   },
 ];
 $.result = [];
