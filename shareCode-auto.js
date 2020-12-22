@@ -7,7 +7,7 @@
  */
 const $ = new Env("互助码");
 const shareCodes = [
- {
+{
     zd: $.getdata("zd_shareCode1") || "kryhcevi2jws3rwtwbxjb5mola5ac3f4ijdgqji",
     nc: $.getdata("nc_shareCode1") || "df2700bf2367427b92f0819ff142ebb7",
     mc: $.getdata("mc_shareCode1") || "MTAxODcxOTI2NTAwMDAwMDAyNjQ0NzYzNQ==",
@@ -69,7 +69,7 @@ $.random = Math.floor(Math.random() * 60);
         `http://api.turinglabs.net/api/v1/jd/jxfactory/create/${jxgc}/`,
         "京喜工厂"
       ));
-       await $.wait($.random);
+    await $.wait($.random);
     jdzz &&
       (await create(
         `https://code.chiang.fun/api/v1/jd/jdzz/create/${jdzz}/`,
