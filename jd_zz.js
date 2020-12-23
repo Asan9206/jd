@@ -255,7 +255,7 @@ function getUserInfo() {
           if (safeGet(data)) {
             data = JSON.parse(data);
             if (data.data.shareTaskRes) {
-              console.log(`\n您的${$.name}好友助力码为： ${data.data.shareTaskRes.itemId}\n`);
+              console.log(`\n【京东账号${$.index}（${$.nickName || $.UserName}）的${$.name}好友互助码】${data.data.shareTaskRes.itemId}\n`);
             } else {
               console.log(`已满5人助力,暂时看不到您的${$.name}好友助力码`)
             }
@@ -383,7 +383,16 @@ function requireConfig() {
   return new Promise(resolve => {
     console.log(`开始获取${$.name}配置文件\n`);
     //Node.js用户请在jdCookie.js处填写京东ck;
-    const shareCodes = $.isNode() ? process.env.JDZZ_SHARECODES.split('&') : [];
+    let shareCodes = [];
+    if ($.isNode()) {
+      if (process.env.JDZZ_SHARECODES) {
+        if (process.env.JDZZ_SHARECODES.indexOf('\n') > -1) {
+          shareCodes = process.env.JDZZ_SHARECODES.split('\n');
+        } else {
+          shareCodes = process.env.JDZZ_SHARECODES.split('&');
+        }
+      }
+    }
     console.log(`共${cookiesArr.length}个京东账号\n`);
     $.shareCodesArr = [];
     if ($.isNode()) {
