@@ -14,11 +14,14 @@ APP活动入口：“最新版本京东APP >领券中心/券后9.9>领点点券�
 [task_local]
 #点点券
 10 0,20 * * * https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_necklace.js, tag=点点券, enabled=true
+
 ================Loon==============
 [Script]
 cron "10 0,20 * * *" script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_necklace.js,tag=点点券
+
 ===============Surge=================
 点点券 = type=cron,cronexp="10 0,20 * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_necklace.js
+
 ============小火箭=========
 点点券 = type=cron,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_necklace.js, cronexpr="10 0,20 * * *", timeout=200, enable=true
  */
@@ -43,6 +46,7 @@ if ($.isNode()) {
   cookiesArr.reverse();
   cookiesArr.push(...[$.getdata('CookieJD2'), $.getdata('CookieJD')]);
   cookiesArr.reverse();
+  cookiesArr = cookiesArr.filter(item => item !== "" && item !== null && item !== undefined);
 }
 
 const JD_API_HOST = 'https://api.m.jd.com/api';
@@ -66,8 +70,6 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
 
         if ($.isNode()) {
           await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
-        } else {
-          $.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。$.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。
         }
         continue
       }
