@@ -41,7 +41,7 @@ $.random = Math.floor(Math.random() * 60);
 !(async () => {
   console.log(`\n此脚本延迟${$.random}秒执行\n`);
   for (let i = 0; i < shareCodes.length; i++) {
-    const { zd, nc, mc, ddgc, jxgc, jxzz, crazyjoy } = shareCodes[i];
+    const { zd, nc, mc, ddgc, jxgc, jdzz, crazyjoy } = shareCodes[i];
     await $.wait($.random);
     zd &&
       (await create(
@@ -73,10 +73,10 @@ $.random = Math.floor(Math.random() * 60);
         "京喜工厂"
       ));
     await $.wait($.random);
-    jxzz &&
+    jdzz &&
       (await create(
-        `https://code.chiang.fun/api/v1/jd/jdzz/create/${jxzz}/`,
-        "京喜赚赚"
+        `https://code.chiang.fun/api/v1/jd/jdzz/create/${jdzz}/`,
+        "京东赚赚"
       ));
     await $.wait($.random);
     crazyjoy &&
