@@ -14,6 +14,7 @@ const shareCodes = [
     ddgc: $.getdata("dd_shareCode1") || "P04z54XCjVWnYaS5mhPWmHx1H5Kk_eaug",
     jxgc: $.getdata("jx_shareCode1") || "XwKNPPNW5erTPUvfE7Um1A==",
     jdzz: $.getdata("zz_shareCode1") || "S47ohQRcQ91TRInWp",
+    jdcj: $.getdata("cj_shareCode1") || "cDg_5HlVwdMZ-79r3a22kQ==",
   },
   {
     zd: $.getdata("zd_shareCode2") || "xaq3fso6ha2kqi34gekijjc3sklht2gwkpke22i",
@@ -22,6 +23,7 @@ const shareCodes = [
     ddgc: $.getdata("dd_shareCode2") || "P04z54XCjVWnYaS5mlXTjUsVfqfAU024HE",
     jxgc: $.getdata("jx_shareCode2") || "_Wun7qa7XpzdbHoB-tqNUw==",
     jdzz: $.getdata("zz_shareCode1") || "S4qI1FcqRc4FDt81dGQ",
+    jdcj: $.getdata("cj_shareCode1") || "yiX0Pf9nocttTM_bHu84zQ==",
   },
 {
     zd: $.getdata("zd_shareCode2") || "mlrdw3aw26j3whjsgvfk6is5jpb2fokucj36l5a",
@@ -30,6 +32,7 @@ const shareCodes = [
     ddgc: $.getdata("dd_shareCode2") || "P04z54XCjVWnYaS5m9cZ2WtiH9Mx7fu5Gw29QM",
     jxgc: $.getdata("jx_shareCode2") || "craJAPt4-VEHXby1IpspgQ==",
     jdzz: $.getdata("zz_shareCode1") || "S5KkcRUtM9lKFI0_1laYLdQ",
+    jdcj: $.getdata("cj_shareCode1") || "ZZBY6mgO4N8WbJAUGhfb66t9zd5YaBeE",
   },
 ];
 $.result = [];
@@ -74,6 +77,12 @@ $.random = Math.floor(Math.random() * 60);
       (await create(
         `https://code.chiang.fun/api/v1/jd/jdzz/create/${jdzz}/`,
         "京东赚赚"
+      ));
+      await $.wait($.random);
+    jdcj &&
+      (await create(
+        `https://code.chiang.fun/api/v1/jd/jdcrazyjoy/create/${jdcj}/`,
+        "crazyJoy"
       ));
   }
   await showMsg();
