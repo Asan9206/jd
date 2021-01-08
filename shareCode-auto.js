@@ -22,17 +22,17 @@ const shareCodes = [
     mc: $.getdata("mc_shareCode2") || "MTE1NDAxNzgwMDAwMDAwMzY2ODc3MzE=",
     ddgc: $.getdata("dd_shareCode2") || "P04z54XCjVWnYaS5mlXTjUsVfqfAU024HE",
     jxgc: $.getdata("jx_shareCode2") || "_Wun7qa7XpzdbHoB-tqNUw==",
-    jdzz: $.getdata("zz_shareCode1") || "S4qI1FcqRc4FDt81dGQ",
-    jdcj: $.getdata("cj_shareCode1") || "yiX0Pf9nocttTM_bHu84zQ==",
+    jdzz: $.getdata("zz_shareCode2") || "S4qI1FcqRc4FDt81dGQ",
+    jdcj: $.getdata("cj_shareCode2") || "yiX0Pf9nocttTM_bHu84zQ==",
   },
 {
-    zd: $.getdata("zd_shareCode2") || "mlrdw3aw26j3whjsgvfk6is5jpb2fokucj36l5a",
-    nc: $.getdata("nc_shareCode2") || "dcb1345777694b8ebb5fde99a1fff6a0",
-    mc: $.getdata("mc_shareCode2") || "MTE1NDQ5OTUwMDAwMDAwNDE3ODM3Mzc=",
-    ddgc: $.getdata("dd_shareCode2") || "P04z54XCjVWnYaS5m9cZ2WtiH9Mx7fu5Gw29QM",
-    jxgc: $.getdata("jx_shareCode2") || "craJAPt4-VEHXby1IpspgQ==",
-    jdzz: $.getdata("zz_shareCode1") || "S5KkcRUtM9lKFI0_1laYLdQ",
-    jdcj: $.getdata("cj_shareCode1") || "ZZBY6mgO4N8WbJAUGhfb66t9zd5YaBeE",
+    zd: $.getdata("zd_shareCode3") || "mlrdw3aw26j3whjsgvfk6is5jpb2fokucj36l5a",
+    nc: $.getdata("nc_shareCode3") || "dcb1345777694b8ebb5fde99a1fff6a0",
+    mc: $.getdata("mc_shareCode3") || "MTE1NDQ5OTUwMDAwMDAwNDE3ODM3Mzc=",
+    ddgc: $.getdata("dd_shareCode3") || "P04z54XCjVWnYaS5m9cZ2WtiH9Mx7fu5Gw29QM",
+    jxgc: $.getdata("jx_shareCode3") || "craJAPt4-VEHXby1IpspgQ==",
+    jdzz: $.getdata("zz_shareCode3") || "S5KkcRUtM9lKFI0_1laYLdQ",
+    jdcj: $.getdata("cj_shareCode3") || "ZZBY6mgO4N8WbJAUGhfb66t9zd5YaBeE",
   },
 ];
 $.result = [];
@@ -41,7 +41,7 @@ $.random = Math.floor(Math.random() * 60);
 !(async () => {
   console.log(`\n此脚本延迟${$.random}秒执行\n`);
   for (let i = 0; i < shareCodes.length; i++) {
-    const { zd, nc, mc, ddgc, jxgc, jdzz } = shareCodes[i];
+    const { zd, nc, mc, ddgc, jxgc, jdzz, jdcj  } = shareCodes[i];
     await $.wait($.random);
     zd &&
       (await create(
