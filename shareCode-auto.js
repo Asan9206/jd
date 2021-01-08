@@ -14,7 +14,7 @@ const shareCodes = [
     ddgc: $.getdata("dd_shareCode1") || "P04z54XCjVWnYaS5mhPWmHx1H5Kk_eaug",
     jxgc: $.getdata("jx_shareCode1") || "XwKNPPNW5erTPUvfE7Um1A==",
     jdzz: $.getdata("zz_shareCode1") || "S47ohQRcQ91TRInWp",
-    jdcrazyjoy: $.getdata("crazyjoy_shareCode1") || "cDg_5HlVwdMZ-79r3a22kQ==",
+    crazyjoy: $.getdata("jd_joy_shareCode1") || "cDg_5HlVwdMZ-79r3a22kQ==",
   },
   {
     zd: $.getdata("zd_shareCode2") || "xaq3fso6ha2kqi34gekijjc3sklht2gwkpke22i",
@@ -23,7 +23,7 @@ const shareCodes = [
     ddgc: $.getdata("dd_shareCode2") || "P04z54XCjVWnYaS5mlXTjUsVfqfAU024HE",
     jxgc: $.getdata("jx_shareCode2") || "_Wun7qa7XpzdbHoB-tqNUw==",
     jdzz: $.getdata("zz_shareCode2") || "S4qI1FcqRc4FDt81dGQ",
-    jdcrazyjoy: $.getdata("crazyjoy_shareCode2") || "yiX0Pf9nocttTM_bHu84zQ==",
+    crazyjoy: $.getdata("jd_joyshareCode2") || "yiX0Pf9nocttTM_bHu84zQ==",
   },
 {
     zd: $.getdata("zd_shareCode3") || "mlrdw3aw26j3whjsgvfk6is5jpb2fokucj36l5a",
@@ -32,7 +32,7 @@ const shareCodes = [
     ddgc: $.getdata("dd_shareCode3") || "P04z54XCjVWnYaS5m9cZ2WtiH9Mx7fu5Gw29QM",
     jxgc: $.getdata("jx_shareCode3") || "craJAPt4-VEHXby1IpspgQ==",
     jdzz: $.getdata("zz_shareCode3") || "S5KkcRUtM9lKFI0_1laYLdQ",
-    jdcrazyjoy: $.getdata("crazyjoy_shareCode3") || "ZZBY6mgO4N8WbJAUGhfb66t9zd5YaBeE",
+    crazyjoy: $.getdata("jd_joyshareCode3") || "ZZBY6mgO4N8WbJAUGhfb66t9zd5YaBeE",
   },
 ];
 $.result = [];
@@ -41,7 +41,7 @@ $.random = Math.floor(Math.random() * 60);
 !(async () => {
   console.log(`\n此脚本延迟${$.random}秒执行\n`);
   for (let i = 0; i < shareCodes.length; i++) {
-    const { zd, nc, mc, ddgc, jxgc, jdzz, jdcrazyjoy } = shareCodes[i];
+    const { zd, nc, mc, ddgc, jxgc, jxzz, crazyjoy } = shareCodes[i];
     await $.wait($.random);
     zd &&
       (await create(
@@ -73,17 +73,17 @@ $.random = Math.floor(Math.random() * 60);
         "京喜工厂"
       ));
     await $.wait($.random);
-    jdzz &&
+    jxzz &&
       (await create(
-        `https://code.chiang.fun/api/v1/jd/jdzz/create/${jdzz}/`,
-        "京东赚赚"
+        `https://code.chiang.fun/api/v1/jd/jdzz/create/${jxzz}/`,
+        "京喜赚赚"
       ));
     await $.wait($.random);
-    jdcrazyjoy &&
+    crazyjoy &&
       (await create(
-        `https://code.chiang.fun/api/v1/jd/jdcrazyjoy/create/${jdcrazyjoy}/`,
+        `https://code.chiang.fun/api/v1/jd/jdcrazyjoy/create/${crazyjoy}/`,
         "疯狂的joy"
-      ));    
+      ));
   }
   await showMsg();
 })()
@@ -103,8 +103,10 @@ function create(path, name) {
         const needAgain = await checkWhetherNeedAgain(resp, create, path, name);
         if (needAgain) return;
         const { message } = JSON.parse(data);
-        $.log(`\n${message}\n${data}`);
-        $.result.push(`${name}： ${message}`);
+        const { msg } = JSON.parse(data);
+        let notifyMessage = message || msg ;
+        $.log(`\n${notifyMessage}\n${data}`);
+        $.result.push(`${name}： ${notifyMessage}`);
       } catch (e) {
         $.logErr(e, resp);
       } finally {
